@@ -10,7 +10,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
-
+ 
 /* NAV */
 nav{background:rgba(248,248,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;padding:0 48px;display:flex;align-items:center;justify-content:space-between;height:56px}
 .nav-logo{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--text);letter-spacing:-.01em;text-decoration:none}
@@ -18,138 +18,150 @@ nav{background:rgba(248,248,247,.94);backdrop-filter:blur(8px);border-bottom:1px
 .nav-links{display:flex;gap:36px}
 .nav-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color .15s}
 .nav-links a:hover{color:var(--text)}
-.nav-cta{font-size:13px;padding:7px 18px;background:var(--text);color:var(--white);border-radius:7px;text-decoration:none;font-weight:500;transition:opacity .15s}
+.nav-cta{font-size:13px;padding:7px 18px;background:var(--text);color:var(--white);border-radius:7px;text-decoration:none;font-weight:500;transition:opacity .15s;white-space:nowrap}
 .nav-cta:hover{opacity:.85}
-
+ 
 /* LAYOUT */
 .container{max-width:1080px;margin:0 auto;padding:0 48px}
 section{padding:96px 0;border-top:1px solid var(--border)}
-
+ 
 /* HERO */
 .hero{padding:100px 0 88px;border-top:none;background:var(--white)}
 .hero-eyebrow{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:22px;font-weight:500}
-.hero h1{font-size:clamp(38px,5vw,62px);font-weight:600;letter-spacing:-.03em;line-height:1.07;color:var(--text);margin-bottom:24px}
+.hero h1{font-size:clamp(36px,5vw,62px);font-weight:600;letter-spacing:-.03em;line-height:1.07;color:var(--text);margin-bottom:24px}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero-desc{font-size:17px;color:var(--muted);max-width:520px;line-height:1.8;margin-bottom:40px;font-weight:300}
 .hero-desc strong{color:var(--text);font-weight:500}
 .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
-.btn{font-size:13px;padding:9px 20px;border-radius:7px;text-decoration:none;font-weight:500;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
+.btn{font-size:13px;padding:9px 20px;border-radius:7px;text-decoration:none;font-weight:500;transition:all .15s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .btn-primary{background:var(--text);color:var(--white)}
 .btn-primary:hover{background:#2d2d2a}
 .btn-ghost{background:var(--white);color:var(--muted);border:1px solid var(--border-strong)}
 .btn-ghost:hover{border-color:var(--subtle);color:var(--text)}
-.stats-row{display:flex;gap:0;border-top:1px solid var(--border);padding-top:36px}
-.stat{padding-right:48px;margin-right:48px;border-right:1px solid var(--border)}
-.stat:last-child{border:none;padding:0;margin:0}
+.stats-row{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--border);padding-top:36px}
+.stat{padding-right:48px;margin-right:48px;border-right:1px solid var(--border);margin-bottom:16px}
+.stat:last-child{border:none;padding:0;margin-right:0}
 .stat-n{font-size:30px;font-weight:600;color:var(--text);letter-spacing:-.03em;line-height:1}
 .stat-n span{color:var(--accent)}
-.stat-l{font-size:11px;color:var(--subtle);margin-top:5px;text-transform:uppercase;letter-spacing:.07em}
-
+.stat-l{font-family:var(--mono);font-size:11px;color:var(--subtle);margin-top:5px;text-transform:uppercase;letter-spacing:.07em}
+ 
 /* SECTION HEADER */
 .sec-eyebrow{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-weight:500;margin-bottom:8px}
-.sec-title{font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-.02em;color:var(--text);margin-bottom:10px}
+.sec-title{font-size:clamp(22px,3vw,34px);font-weight:600;letter-spacing:-.02em;color:var(--text);margin-bottom:10px}
 .sec-sub{font-size:15px;color:var(--muted);margin-bottom:44px;font-weight:300;max-width:540px;line-height:1.7}
-
+ 
 /* PROJECTS */
 #projects{background:var(--white)}
 .project-list{display:flex;flex-direction:column;gap:10px}
 .project-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white);transition:border-color .2s}
 .project-card.featured{border-color:var(--accent);border-width:1.5px}
 .project-card:not(.featured):hover{border-color:var(--border-strong)}
-.proj-header{padding:22px 28px;display:flex;align-items:center;gap:18px;cursor:pointer;user-select:none}
-.proj-num{font-family:var(--mono);font-size:11px;color:var(--subtle);min-width:26px}
+.proj-header{padding:20px 24px;display:flex;align-items:center;gap:16px;cursor:pointer;user-select:none}
+.proj-num{font-family:var(--mono);font-size:11px;color:var(--subtle);min-width:26px;flex-shrink:0}
 .proj-avatar{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--mono);font-size:12px;font-weight:500}
 .av-blue{background:#eff4ff;color:var(--accent)}
 .av-gray{background:#f3f3f0;color:#555}
 .av-teal{background:#f0faf4;color:#0f7a50}
 .av-purple{background:#f5f3ff;color:#6d3adb}
-.proj-meta{flex:1;min-width:0}
+.proj-meta{flex:1;min-width:0;overflow:hidden}
 .proj-name{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-.01em;margin-bottom:3px}
-.proj-tagline{font-size:12px;color:var(--subtle)}
-.proj-badges{display:flex;gap:6px;flex-wrap:wrap}
+.proj-tagline{font-family:var(--mono);font-size:12px;color:var(--subtle);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.proj-badges{display:flex;gap:6px;flex-shrink:0;flex-wrap:nowrap}
 .badge{font-size:10px;padding:3px 9px;border-radius:4px;font-weight:500;white-space:nowrap}
 .bl{background:#f0faf4;color:var(--green);border:1px solid #c3e6d4}
 .bb{background:#eff4ff;color:var(--accent);border:1px solid #bfdbfe}
 .bg{background:#f3f3f0;color:#555;border:1px solid #e0e0db}
 .chevron{font-size:11px;color:var(--subtle);transition:transform .25s;flex-shrink:0}
 .project-card.open .chevron{transform:rotate(180deg);color:var(--accent)}
-
 .proj-body{display:none;border-top:1px solid var(--border);padding:28px}
 .project-card.open .proj-body{display:block}
 .proj-body-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-
 .pb-label{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-weight:500;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--border)}
-.pipeline{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:16px}
-.pipe-step{font-size:10px;padding:4px 11px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--muted)}
-.pipe-arr{font-size:10px;color:var(--subtle)}
+.pipeline{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:16px;row-gap:6px}
+.pipe-step{font-family:var(--mono);font-size:10px;padding:4px 11px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--muted)}
+.pipe-arr{font-family:var(--mono);font-size:10px;color:var(--subtle)}
 .pb-list{list-style:none;padding:0}
 .pb-list li{font-size:13px;color:var(--muted);padding:3px 0 3px 16px;position:relative;line-height:1.6}
 .pb-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:10px;top:5px;font-family:var(--mono)}
 .pb-list li strong{color:var(--text);font-weight:500}
 .arch-block{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px}
-.arch-block-t{font-size:12px;font-weight:600;color:var(--text);margin-bottom:4px}
+.arch-block-t{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--text);margin-bottom:4px}
 .arch-block-d{font-size:12px;color:var(--muted);line-height:1.6}
 .quote-bar{border-left:2px solid var(--accent);padding:11px 16px;background:#f7f9ff;border-radius:0 7px 7px 0;margin-top:14px}
 .quote-bar p{font-size:13px;color:var(--text);font-style:italic;line-height:1.7}
 .stack-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.chip{font-size:11px;padding:4px 10px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--muted)}
-
+.chip{font-family:var(--mono);font-size:11px;padding:4px 10px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--muted)}
+.chip.hi{background:var(--accent-light);border-color:#bfdbfe;color:var(--accent)}
+ 
 /* AGENTS GRID */
 .agents-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
 .agent{background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:12px 14px}
 .agent-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px}
 .agent-desc{font-size:11px;color:var(--muted);line-height:1.55}
 .agent-tech{font-family:var(--mono);font-size:10px;color:var(--subtle);margin-top:5px}
-
+ 
 /* ARCHITECTURE */
 #architecture{background:var(--bg)}
-.arch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.arch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .arch-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:22px;transition:border-color .2s}
 .arch-card:hover{border-color:var(--border-strong)}
 .arch-card-num{font-family:var(--mono);font-size:10px;color:var(--subtle);letter-spacing:.08em;margin-bottom:12px}
 .arch-card-title{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-.01em;margin-bottom:8px}
 .arch-card-body{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px}
-.arch-example{font-family:var(--mono);font-size:11px;color:var(--accent);background:#f0f5ff;border-radius:5px;padding:9px 12px;line-height:1.65}
-
+.arch-example{font-family:var(--mono);font-size:11px;color:var(--accent);background:#f0f5ff;border-radius:5px;padding:9px 12px;line-height:1.65;border:1px solid #e0e9ff}
+ 
 /* CONTACT */
 #contact{background:var(--white)}
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.contact-links{display:flex;flex-direction:column;gap:8px}
-.contact-link{display:flex;align-items:center;gap:14px;padding:13px 18px;border:1px solid var(--border);border-radius:9px;text-decoration:none;transition:border-color .15s}
-.contact-link:hover{border-color:var(--accent)}
-.contact-link-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
-.contact-link-text{font-size:13px;color:var(--muted)}
-.contact-link:hover .contact-link-text{color:var(--text)}
-.contact-stack-label{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;font-weight:500;margin-bottom:12px;padding-bottom:7px;border-bottom:1px solid var(--border)}
+.info-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}
+.info-card{border:1px solid var(--border);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:4px;text-decoration:none;transition:border-color .15s}
+.info-card:hover{border-color:var(--accent)}
+.info-card-label{font-family:var(--mono);font-size:10px;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em}
+.info-card-value{font-size:13px;color:var(--text);font-weight:500}
+.info-card-sub{font-family:var(--mono);font-size:11px;color:var(--subtle)}
+.stack-card{border:1px solid var(--border);border-radius:10px;padding:20px 24px}
+.stack-label{font-family:var(--mono);font-size:10px;color:var(--subtle);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
-
+ 
 /* FOOTER */
-footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;display:flex;justify-content:space-between;align-items:center}
-.footer-l{font-size:12px;color:#555}
-.footer-r{font-size:12px;color:#444;font-family:var(--mono)}
-
+footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-l{font-family:var(--mono);font-size:12px;color:#555}
+.footer-r{font-family:var(--mono);font-size:12px;color:#444}
+ 
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.fade-in.visible{opacity:1;transform:none}
+ 
 /* RESPONSIVE */
-@media(max-width:768px){
+@media(max-width:900px){
+  .arch-grid{grid-template-columns:1fr 1fr}
+  .info-row{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
   nav{padding:0 20px}
   .nav-links{display:none}
   .container{padding:0 20px}
+  .hero{padding:64px 0 56px}
   section{padding:64px 0}
-  .hero{padding:72px 0 64px}
-  .stats-row{flex-wrap:wrap;gap:24px}
-  .stat{border:none;padding:0;margin:0}
+  .hero h1{font-size:36px}
+  .hero-desc{font-size:15px}
+  .proj-header{flex-wrap:wrap;row-gap:10px}
+  .proj-badges{display:none}
   .proj-body-grid{grid-template-columns:1fr}
   .agents-grid{grid-template-columns:1fr}
-  .contact-wrap{grid-template-columns:1fr}
-  footer{flex-direction:column;gap:10px;text-align:center;padding:24px 20px}
+  .arch-grid{grid-template-columns:1fr}
+  .info-row{grid-template-columns:1fr 1fr}
+  .stat{padding-right:24px;margin-right:24px}
+  footer{padding:24px 20px}
 }
-
-/* ANIMATIONS */
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.fade-in.visible{opacity:1;transform:none}
+@media(max-width:420px){
+  .info-row{grid-template-columns:1fr}
+  .hero-actions .btn-ghost{display:none}
+  .hero-actions .btn-ghost:first-of-type{display:inline-flex}
+}
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <a class="nav-logo" href="#">Esther Elías<span>.</span></a>
   <div class="nav-links">
@@ -159,7 +171,7 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
   </div>
   <a class="nav-cta" href="#contact">Get in touch</a>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
@@ -174,35 +186,22 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
       <a class="btn btn-ghost" href="https://gritly-web.vercel.app" target="_blank">Gritly ↗</a>
     </div>
     <div class="stats-row">
-      <div class="stat">
-        <div class="stat-n">4</div>
-        <div class="stat-l">Production apps</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">8</div>
-        <div class="stat-l">GTM agents</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">40<span>%</span></div>
-        <div class="stat-l">Admin reduction</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">12<span>+</span></div>
-        <div class="stat-l">Years B2B sales</div>
-      </div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Production apps</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">GTM agents</div></div>
+      <div class="stat"><div class="stat-n">40<span>%</span></div><div class="stat-l">Admin reduction</div></div>
+      <div class="stat"><div class="stat-n">12<span>+</span></div><div class="stat-l">Years B2B sales</div></div>
     </div>
   </div>
 </section>
-
+ 
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="sec-eyebrow fade-in">Projects</div>
     <h2 class="sec-title fade-in">Production portfolio</h2>
     <p class="sec-sub fade-in">Four AI-powered systems live in production — not demos, not side projects.</p>
-
     <div class="project-list">
-
+ 
       <!-- LEONLEADS -->
       <div class="project-card featured open fade-in">
         <div class="proj-header" onclick="toggle(this)">
@@ -241,23 +240,23 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
               </ul>
               <div class="pb-label" style="margin-top:20px">Stack</div>
               <div class="stack-row">
-                <span class="chip">Python</span><span class="chip">Claude API</span>
-                <span class="chip">Haiku · Sonnet</span><span class="chip">n8n</span>
+                <span class="chip hi">Python</span><span class="chip hi">Claude API</span>
+                <span class="chip hi">Haiku · Sonnet</span><span class="chip">n8n</span>
                 <span class="chip">Instantly</span><span class="chip">Stripe</span><span class="chip">Vercel</span>
               </div>
             </div>
             <div>
               <div class="pb-label">Architecture decisions</div>
               <div class="arch-block">
-                <div class="arch-block-t">Modular pipeline</div>
+                <div class="arch-block-t">modular_pipeline</div>
                 <div class="arch-block-d">6 independent modules. Swap one without touching the rest. ICP filter rejects accounts before spending a single token.</div>
               </div>
               <div class="arch-block">
-                <div class="arch-block-t">Human-in-the-loop by design</div>
+                <div class="arch-block-t">human_in_the_loop</div>
                 <div class="arch-block-d">A wrong email to a strategic account can close a door permanently. AI generates, human decides.</div>
               </div>
               <div class="arch-block">
-                <div class="arch-block-t">Haiku for qualification · Sonnet for sequences</div>
+                <div class="arch-block-t">haiku → qualify · sonnet → sequences</div>
                 <div class="arch-block-d">Deliberate cost decision — right model for each task, not the best model for everything.</div>
               </div>
               <div class="quote-bar">
@@ -267,7 +266,7 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
           </div>
         </div>
       </div>
-
+ 
       <!-- GTM AGENTS -->
       <div class="project-card fade-in">
         <div class="proj-header" onclick="toggle(this)">
@@ -294,61 +293,29 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
               </ul>
               <div class="pb-label" style="margin-top:20px">The 8 agents</div>
               <div class="agents-grid">
-                <div class="agent">
-                  <div class="agent-name">ICP Qualification Agent</div>
-                  <div class="agent-desc">Qualifies 50 accounts in the time it takes to research 5 manually</div>
-                  <div class="agent-tech">Python · Claude API · CSV</div>
-                </div>
-                <div class="agent">
-                  <div class="agent-name">Lead Enrichment Agent</div>
-                  <div class="agent-desc">Enriches and prioritizes entire CRM in seconds</div>
-                  <div class="agent-tech">Python · HubSpot API · Claude</div>
-                </div>
-                <div class="agent">
-                  <div class="agent-name">GTM Intelligence Tool</div>
-                  <div class="agent-desc">45 min of account research in 15 seconds</div>
-                  <div class="agent-tech">Python · Web Search · Claude Opus</div>
-                </div>
-                <div class="agent">
-                  <div class="agent-name">Pipeline Health Monitor</div>
-                  <div class="agent-desc">Flags at-risk deals automatically every Monday</div>
-                  <div class="agent-tech">Python · HubSpot API · Claude Haiku</div>
-                </div>
-                <div class="agent">
-                  <div class="agent-name">Meeting Prep Agent</div>
-                  <div class="agent-desc">Replaces 30 min of manual research before every call</div>
-                  <div class="agent-tech">Python · HubSpot API · Web Search</div>
-                </div>
-                <div class="agent">
-                  <div class="agent-name">Email Sequence Generator</div>
-                  <div class="agent-desc">Personalized sequences at scale in minutes</div>
-                  <div class="agent-tech">Python · Apollo API · Clay · Claude</div>
-                </div>
-                <div class="agent">
-                  <div class="agent-name">Daily Prospect Agent</div>
-                  <div class="agent-desc">Qualified prospects in pipeline every morning, zero manual work</div>
-                  <div class="agent-tech">Python · Apollo API · HubSpot</div>
-                </div>
-                <div class="agent">
-                  <div class="agent-name">Lead Scoring Pipeline</div>
-                  <div class="agent-desc">Every lead scored, routed and logged 24/7</div>
-                  <div class="agent-tech">n8n · Webhooks · HubSpot API</div>
-                </div>
+                <div class="agent"><div class="agent-name">ICP Qualification Agent</div><div class="agent-desc">Qualifies 50 accounts in the time it takes to research 5 manually</div><div class="agent-tech">Python · Claude API · CSV</div></div>
+                <div class="agent"><div class="agent-name">Lead Enrichment Agent</div><div class="agent-desc">Enriches and prioritizes entire CRM in seconds</div><div class="agent-tech">Python · HubSpot API · Claude</div></div>
+                <div class="agent"><div class="agent-name">GTM Intelligence Tool</div><div class="agent-desc">45 min of account research in 15 seconds</div><div class="agent-tech">Python · Web Search · Claude Opus</div></div>
+                <div class="agent"><div class="agent-name">Pipeline Health Monitor</div><div class="agent-desc">Flags at-risk deals automatically every Monday</div><div class="agent-tech">Python · HubSpot API · Claude Haiku</div></div>
+                <div class="agent"><div class="agent-name">Meeting Prep Agent</div><div class="agent-desc">Replaces 30 min of manual research before every call</div><div class="agent-tech">Python · HubSpot API · Web Search</div></div>
+                <div class="agent"><div class="agent-name">Email Sequence Generator</div><div class="agent-desc">Personalized sequences at scale in minutes</div><div class="agent-tech">Python · Apollo API · Clay · Claude</div></div>
+                <div class="agent"><div class="agent-name">Daily Prospect Agent</div><div class="agent-desc">Qualified prospects every morning, zero manual work</div><div class="agent-tech">Python · Apollo API · HubSpot</div></div>
+                <div class="agent"><div class="agent-name">Lead Scoring Pipeline</div><div class="agent-desc">Every lead scored, routed and logged 24/7</div><div class="agent-tech">n8n · Webhooks · HubSpot API</div></div>
               </div>
             </div>
             <div>
               <div class="pb-label">Architecture decisions</div>
               <div class="arch-block">
                 <div class="arch-block-t">8 independent tools, not a monolith</div>
-                <div class="arch-block-d">Each tool solves one problem. Update any without risk of breaking the others. The team adopts what they need.</div>
+                <div class="arch-block-d">Each tool solves one problem. Update any without risk of breaking the others.</div>
               </div>
               <div class="arch-block">
-                <div class="arch-block-t">Event-driven vs. scheduled — deliberately mixed</div>
-                <div class="arch-block-d">Lead Scoring: event-driven via n8n webhook — a new lead must be scored in seconds. Pipeline Monitor: scheduled every Monday — batch makes sense, real-time adds no value.</div>
+                <div class="arch-block-t">event-driven vs. scheduled — deliberately mixed</div>
+                <div class="arch-block-d">Lead Scoring: webhook, fires in seconds. Pipeline Monitor: scheduled every Monday — batch makes sense, real-time adds no value.</div>
               </div>
               <div class="arch-block">
-                <div class="arch-block-t">Model selection by task</div>
-                <div class="arch-block-d">Haiku for high-frequency, low-complexity tasks. Opus for deep research where quality justifies cost. Not using the best model for everything.</div>
+                <div class="arch-block-t">model selection by task</div>
+                <div class="arch-block-d">Haiku for high-frequency, low-complexity tasks. Opus for deep research where quality justifies cost.</div>
               </div>
               <div class="quote-bar">
                 <p>"I didn't build these for the portfolio — I built them because my team needed them. The portfolio is the byproduct."</p>
@@ -357,7 +324,7 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
           </div>
         </div>
       </div>
-
+ 
       <!-- LIGHTHOUSE -->
       <div class="project-card fade-in">
         <div class="proj-header" onclick="toggle(this)">
@@ -387,22 +354,22 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
               <div class="pb-label" style="margin-top:20px">Stack</div>
               <div class="stack-row">
                 <span class="chip">Next.js</span><span class="chip">TypeScript</span>
-                <span class="chip">Supabase</span><span class="chip">Claude Haiku</span>
-                <span class="chip">Claude Sonnet</span><span class="chip">Vercel</span>
+                <span class="chip">Supabase</span><span class="chip hi">Claude Haiku</span>
+                <span class="chip hi">Claude Sonnet</span><span class="chip">Vercel</span>
               </div>
             </div>
             <div>
               <div class="pb-label">Architecture decisions</div>
               <div class="arch-block">
-                <div class="arch-block-t">Cache as first-class citizen</div>
-                <div class="arch-block-d">Theory library generated once, stored in Supabase, served to all users — zero tokens. Smart Review queries only Supabase. Most user interactions cost nothing.</div>
+                <div class="arch-block-t">cache as first-class citizen</div>
+                <div class="arch-block-d">Theory library generated once in Supabase, served to all users — zero tokens. Smart Review queries only Supabase. Most interactions cost nothing.</div>
               </div>
               <div class="arch-block">
-                <div class="arch-block-t">Separate API routes per function</div>
+                <div class="arch-block-t">separate API routes per function</div>
                 <div class="arch-block-d">Each endpoint does one thing. Model per route is independent — Haiku for inline feedback, Sonnet for the final session report.</div>
               </div>
               <div class="arch-block">
-                <div class="arch-block-t">Session context window management</div>
+                <div class="arch-block-t">session context window management</div>
                 <div class="arch-block-d">Daily Life characters maintain full conversation history within a session — deliberate, not accidental.</div>
               </div>
               <div class="quote-bar">
@@ -412,7 +379,7 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
           </div>
         </div>
       </div>
-
+ 
       <!-- GRITLY -->
       <div class="project-card fade-in">
         <div class="proj-header" onclick="toggle(this)">
@@ -420,7 +387,7 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
           <div class="proj-avatar av-purple">GR</div>
           <div class="proj-meta">
             <div class="proj-name">Gritly</div>
-            <div class="proj-tagline">AI personal coach · gritly-web.vercel.app · Mobile pending store submission</div>
+            <div class="proj-tagline">AI personal coach · gritly-web.vercel.app</div>
           </div>
           <div class="proj-badges">
             <span class="badge bl">Live</span>
@@ -446,22 +413,22 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
               <div class="stack-row">
                 <span class="chip">Turborepo</span><span class="chip">Expo SDK 54</span>
                 <span class="chip">React Native</span><span class="chip">Next.js 16</span>
-                <span class="chip">Claude Sonnet 4.6</span><span class="chip">Batch API</span>
+                <span class="chip hi">Claude Sonnet 4.6</span><span class="chip hi">Batch API</span>
                 <span class="chip">ElevenLabs</span><span class="chip">Supabase</span><span class="chip">Stripe</span>
               </div>
             </div>
             <div>
               <div class="pb-label">Architecture decisions</div>
               <div class="arch-block">
-                <div class="arch-block-t">Monorepo — logic written once</div>
+                <div class="arch-block-t">monorepo — logic written once</div>
                 <div class="arch-block-d">packages/core, packages/api, packages/i18n shared between mobile and web. Change business logic once, applies everywhere.</div>
               </div>
               <div class="arch-block">
-                <div class="arch-block-t">Prompt caching in conversation</div>
-                <div class="arch-block-d">Grit's system prompt is long. Without caching, every turn pays the full prompt. With caching, only new tokens are charged — up to 90% cost reduction.</div>
+                <div class="arch-block-t">prompt caching in conversation</div>
+                <div class="arch-block-d">Grit's system prompt is long. Without caching, every turn pays the full prompt. With caching, only new tokens — up to 90% cost reduction.</div>
               </div>
               <div class="arch-block">
-                <div class="arch-block-t">Batch vs. realtime by urgency</div>
+                <div class="arch-block-t">batch vs. realtime by urgency</div>
                 <div class="arch-block-d">Chat → immediate streaming. Weekly reviews → Batch API at 3AM (50% discount, user sees result in the morning).</div>
               </div>
               <div class="quote-bar">
@@ -471,11 +438,11 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
           </div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- ARCHITECTURE -->
 <section id="architecture">
   <div class="container">
@@ -484,133 +451,122 @@ footer{border-top:1px solid var(--border);background:#111;padding:28px 48px;disp
     <p class="sec-sub fade-in">The principles I apply across every system — with real production examples.</p>
     <div class="arch-grid">
       <div class="arch-card fade-in">
-        <div class="arch-card-num">01</div>
+        <div class="arch-card-num">// 01</div>
         <div class="arch-card-title">Modular architecture</div>
         <div class="arch-card-body">Independent stages that can be updated, scaled, or replaced without touching the rest. Critical in GTM where ICP, models, and data sources change constantly.</div>
-        <div class="arch-example">LeonLeads: 6 modules. Instantly breaks → swap send module only.</div>
+        <div class="arch-example">LeonLeads: 6 modules.<br>Instantly breaks → swap send module only.</div>
       </div>
       <div class="arch-card fade-in">
-        <div class="arch-card-num">02</div>
+        <div class="arch-card-num">// 02</div>
         <div class="arch-card-title">Event-driven vs. scheduled</div>
         <div class="arch-card-body">Event-driven when reaction speed impacts the outcome. Scheduled when timing is predictable and batch makes economic sense.</div>
-        <div class="arch-example">Lead Scoring: webhook fires in seconds. Pipeline Monitor: every Monday.</div>
+        <div class="arch-example">Lead Scoring: webhook, fires in seconds.<br>Pipeline Monitor: every Monday.</div>
       </div>
       <div class="arch-card fade-in">
-        <div class="arch-card-num">03</div>
+        <div class="arch-card-num">// 03</div>
         <div class="arch-card-title">Waterfall enrichment</div>
         <div class="arch-card-body">Cheapest data source first. Only call the next if needed. One of the highest-impact cost decisions in LLM systems.</div>
-        <div class="arch-example">CSV → web search → Claude API only for synthesis. ICP filter spends zero tokens on non-fit accounts.</div>
+        <div class="arch-example">CSV → web search → Claude API (synthesis only).<br>ICP filter spends zero tokens on non-fit accounts.</div>
       </div>
       <div class="arch-card fade-in">
-        <div class="arch-card-num">04</div>
+        <div class="arch-card-num">// 04</div>
         <div class="arch-card-title">Cache as first-class citizen</div>
-        <div class="arch-card-body">Design decision, not afterthought. DB content cache, Anthropic prompt caching, TTL cache — each used where it fits best.</div>
-        <div class="arch-example">Lighthouse: Smart Review = zero tokens. Gritly: prompt caching = 90% cost reduction in chat.</div>
+        <div class="arch-card-body">Design decision, not afterthought. DB cache, prompt caching, TTL — each used where it fits best.</div>
+        <div class="arch-example">Lighthouse: Smart Review = zero tokens.<br>Gritly: prompt caching = 90% cost reduction.</div>
       </div>
       <div class="arch-card fade-in">
-        <div class="arch-card-num">05</div>
+        <div class="arch-card-num">// 05</div>
         <div class="arch-card-title">Human-in-the-loop</div>
         <div class="arch-card-body">Not a limitation — a deliberate design for actions where the cost of error is asymmetric and irreversible.</div>
-        <div class="arch-example">LeonLeads: AI generates 5 emails, rep approves in 3 min. Nothing goes out without sign-off.</div>
+        <div class="arch-example">LeonLeads: AI generates 5 emails,<br>rep approves in 3 min. Nothing goes out without sign-off.</div>
       </div>
       <div class="arch-card fade-in">
-        <div class="arch-card-num">06</div>
+        <div class="arch-card-num">// 06</div>
         <div class="arch-card-title">LLM cost architecture</div>
         <div class="arch-card-body">Model selection as an architectural constraint from day one. The right model per task, not the best model for everything.</div>
-        <div class="arch-example">Haiku: high-freq. Sonnet: high-quality. Batch API: non-urgent. No LLM: when Supabase is enough.</div>
+        <div class="arch-example">Haiku: high-freq · Sonnet: high-quality<br>Batch API: non-urgent (50% off) · No LLM: when Supabase is enough.</div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="sec-eyebrow fade-in">Contact</div>
     <h2 class="sec-title fade-in">Let's talk</h2>
     <p class="sec-sub fade-in">Open to Senior GTM Engineer roles at AI-first and SaaS companies.</p>
-    <div class="contact-wrap">
-      <div class="contact-links fade-in">
-        <a class="contact-link" href="mailto:esther.eliasalonso@gmail.com">
-          <div class="contact-link-dot"></div>
-          <div class="contact-link-text">esther.eliasalonso@gmail.com</div>
-        </a>
-        <a class="contact-link" href="https://linkedin.com" target="_blank">
-          <div class="contact-link-dot"></div>
-          <div class="contact-link-text">LinkedIn</div>
-        </a>
-        <a class="contact-link" href="https://github.com/esther-elialo/gtm-engineering-portfolio" target="_blank">
-          <div class="contact-link-dot"></div>
-          <div class="contact-link-text">github.com/esther-elialo/gtm-engineering-portfolio</div>
-        </a>
-        <a class="contact-link" href="https://leonleads.vercel.app" target="_blank">
-          <div class="contact-link-dot"></div>
-          <div class="contact-link-text">leonleads.vercel.app</div>
-        </a>
-        <a class="contact-link" href="https://lighthouse-english-app.vercel.app/auth/login" target="_blank">
-          <div class="contact-link-dot"></div>
-          <div class="contact-link-text">lighthouse-english-app.vercel.app</div>
-        </a>
-        <a class="contact-link" href="https://gritly-web.vercel.app" target="_blank">
-          <div class="contact-link-dot"></div>
-          <div class="contact-link-text">gritly-web.vercel.app</div>
-        </a>
-        <div class="contact-link" style="cursor:default">
-          <div class="contact-link-dot"></div>
-          <div class="contact-link-text">Madrid, Spain · Open to remote / relocation</div>
-        </div>
+    <div class="info-row fade-in">
+      <a class="info-card" href="mailto:esther.eliasalonso@gmail.com">
+        <div class="info-card-label">email</div>
+        <div class="info-card-value">esther.eliasalonso</div>
+        <div class="info-card-sub">@gmail.com</div>
+      </a>
+      <a class="info-card" href="https://www.linkedin.com/in/esther-elias-alonso" target="_blank">
+        <div class="info-card-label">linkedin</div>
+        <div class="info-card-value">Esther Elías Alonso</div>
+        <div class="info-card-sub">linkedin.com/in/ ↗</div>
+      </a>
+      <a class="info-card" href="https://github.com/esther-elialo/gtm-engineering-portfolio" target="_blank">
+        <div class="info-card-label">github</div>
+        <div class="info-card-value">esther-elialo</div>
+        <div class="info-card-sub">gtm-engineering-portfolio ↗</div>
+      </a>
+      <div class="info-card" style="cursor:default">
+        <div class="info-card-label">location</div>
+        <div class="info-card-value">Madrid, Spain</div>
+        <div class="info-card-sub">Remote only</div>
       </div>
-      <div class="fade-in">
-        <div class="contact-stack-label">Full stack</div>
-        <div class="chips">
-          <span class="chip">Python</span>
-          <span class="chip">Claude API</span>
-          <span class="chip">Haiku · Sonnet</span>
-          <span class="chip">Batch API</span>
-          <span class="chip">HubSpot API</span>
-          <span class="chip">Apollo</span>
-          <span class="chip">Clay</span>
-          <span class="chip">n8n</span>
-          <span class="chip">Next.js</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">React Native</span>
-          <span class="chip">Expo</span>
-          <span class="chip">Turborepo</span>
-          <span class="chip">Supabase</span>
-          <span class="chip">Stripe</span>
-          <span class="chip">Vercel</span>
-          <span class="chip">ElevenLabs</span>
-          <span class="chip">Instantly</span>
-          <span class="chip">Workato</span>
-          <span class="chip">Salesforce</span>
-        </div>
+    </div>
+    <div class="stack-card fade-in">
+      <div class="stack-label">// full stack</div>
+      <div class="chips">
+        <span class="chip hi">Python</span>
+        <span class="chip hi">Claude API</span>
+        <span class="chip hi">Haiku · Sonnet</span>
+        <span class="chip hi">Batch API</span>
+        <span class="chip">HubSpot API</span>
+        <span class="chip">Apollo</span>
+        <span class="chip">Clay</span>
+        <span class="chip">n8n</span>
+        <span class="chip">Next.js</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">React Native</span>
+        <span class="chip">Expo</span>
+        <span class="chip">Turborepo</span>
+        <span class="chip">Supabase</span>
+        <span class="chip">Stripe</span>
+        <span class="chip">Vercel</span>
+        <span class="chip">ElevenLabs</span>
+        <span class="chip">Instantly</span>
+        <span class="chip">Salesforce</span>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <footer>
   <div class="footer-l">Esther Elías Alonso · GTM Engineer · 2026</div>
-  <div class="footer-r">Built with Claude</div>
+  <div class="footer-r">// built_with_claude</div>
 </footer>
-
+ 
 <script>
-function toggle(header) {
-  const card = header.closest('.project-card');
-  const wasOpen = card.classList.contains('open');
-  document.querySelectorAll('.project-card').forEach(c => c.classList.remove('open'));
-  if (!wasOpen) card.classList.add('open');
+function toggle(header){
+  const card=header.closest('.project-card');
+  const wasOpen=card.classList.contains('open');
+  document.querySelectorAll('.project-card').forEach(c=>c.classList.remove('open'));
+  if(!wasOpen)card.classList.add('open');
 }
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 60);
-      observer.unobserve(entry.target);
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*60);
+      obs.unobserve(e.target);
     }
   });
-}, { threshold: 0.08 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
+ 
